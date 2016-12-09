@@ -103,7 +103,7 @@ bool IsBlockValueValid(const CBlock& block, int nBlockHeight, CAmount blockRewar
         // ONLY CHECK SUPERBLOCKS WHEN INITIALLY SYNCED AND CHECKING NEW BLOCK
         {
             // UP TO ONE HOUR OLD, OTHERWISE LONGEST CHAIN
-            if(block->nTime + 60*60 < GetTime())
+            if(block.nTime + 60*60 < GetTime())
                 return true;
         }
 
