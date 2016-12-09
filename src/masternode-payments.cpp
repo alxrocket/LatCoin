@@ -99,6 +99,14 @@ bool IsBlockValueValid(const CBlock& block, int nBlockHeight, CAmount blockRewar
     // we are synced, let's try to check as much data as we can
 
     if(sporkManager.IsSporkActive(SPORK_9_SUPERBLOCKS_ENABLED)) {
+
+        // ONLY CHECK SUPERBLOCKS WHEN INITIALLY SYNCED AND CHECKING NEW BLOCK
+        {
+            // UP TO ONE HOUR OLD, OTHERWISE LONGEST CHAIN
+            if(block->nTime + 60*60 < GetTime())
+                return true;
+        }
+
         if(CSuperblockManager::IsSuperblockTriggered(nBlockHeight)) {
             if(CSuperblockManager::IsValid(block.vtx[0], nBlockHeight, blockReward)) {
                 LogPrint("gobject", "IsBlockValueValid -- Valid superblock at height %d: %s", nBlockHeight, block.vtx[0].ToString());
