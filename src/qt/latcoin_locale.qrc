@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/latcoin_bg.qm</file>
+        <file alias="de">locale/latcoin_de.qm</file>
+        <file alias="en">locale/latcoin_en.qm</file>
+        <file alias="es">locale/latcoin_es.qm</file>
+        <file alias="fi">locale/latcoin_fi.qm</file>
+        <file alias="fr">locale/latcoin_fr.qm</file>
+        <file alias="it">locale/latcoin_it.qm</file>
+        <file alias="ja">locale/latcoin_ja.qm</file>
+        <file alias="pl">locale/latcoin_pl.qm</file>
+        <file alias="pt">locale/latcoin_pt.qm</file>
+        <file alias="ru">locale/latcoin_ru.qm</file>
+        <file alias="sk">locale/latcoin_sk.qm</file>
+        <file alias="sv">locale/latcoin_sv.qm</file>
+        <file alias="vi">locale/latcoin_vi.qm</file>
+        <file alias="zh_CN">locale/latcoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/latcoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

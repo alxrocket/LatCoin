@@ -1,0 +1,22 @@
+[Unit]
+Description=Latcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=latcoin
+Group=latcoin
+
+Type=forking
+PIDFile=/var/lib/latcoind/latcoind.pid
+ExecStart=/usr/bin/latcoind -daemon -pid=/var/lib/latcoind/latcoind.pid \
+-conf=/etc/latcoin/latcoin.conf -datadir=/var/lib/latcoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
